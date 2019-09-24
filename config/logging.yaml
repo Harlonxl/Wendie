@@ -1,0 +1,63 @@
+version: 1
+disable_existing_loggers: False
+
+formatters:
+  simple:
+    format: "%(asctime)s %(filename)s[line:%(lineno)d] %(levelname)s - %(message)s"
+
+handlers:
+  console:
+    class: logging.StreamHandler
+    level: DEBUG
+    formatter: simple
+    stream: ext://sys.stdout
+
+  info_file_handler:
+    class: logging.handlers.RotatingFileHandler
+    level: INFO
+    formatter: simple
+    filename: ../log/wendie.INFO.log
+    maxBytes: 10485760
+    backupCount: 10
+    encoding: utf8
+
+  error_file_handler:
+    class: logging.handlers.RotatingFileHandler
+    level: WARN
+    formatter: simple
+    filename: ../log/wendie.ERROR.log
+    maxBytes: 10485760
+    backupCount: 10
+    encoding: utf8
+
+  spider_info_file_handler:
+    class: logging.handlers.RotatingFileHandler
+    level: INFO
+    formatter: simple
+    filename: ../log/spider.INFO.log
+    maxBytes: 10485760
+    backupCount: 10
+    encoding: utf8
+
+  spider_error_file_handler:
+    class: logging.handlers.RotatingFileHandler
+    level: WARN
+    formatter: simple
+    filename: ../log/spider.ERROR.log
+    maxBytes: 10485760
+    backupCount: 10
+    encoding: utf8
+
+loggers:
+  logger:
+    level: INFO
+    handlers: [info_file_handler, error_file_handler]
+    propagate: no
+  spider:
+    level: INFO
+    handlers: [spider_info_file_handler, spider_error_file_handler]
+    propagate: no
+
+root:
+  level: INFO
+  handlers: [console, info_file_handler, error_file_handler]

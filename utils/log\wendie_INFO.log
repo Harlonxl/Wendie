@@ -1,0 +1,3 @@
+2019-09-24 02:33:13,930 logger.py <module>[line:8] INFO - test
+2019-09-24 02:33:36,779 logger.py[line:8] INFO - test
+2019-09-24 02:35:09,167 logger.py[line:8] INFO - test
