@@ -2,3 +2,7 @@
 log/wendie.ERROR.log
 log/wendie.INFO.log
 venv
+config/__pycache__
+spider/__pycache__
+spider/spiders/__pycache__
+utils/__pycache__
