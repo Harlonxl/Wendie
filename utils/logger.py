@@ -11,4 +11,3 @@ else:
     logging.basicConfig(level="INFO")
 
 logger = logging.getLogger("logger")
-spiderLogger = logging.getLogger("spider")
