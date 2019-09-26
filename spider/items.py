@@ -26,6 +26,8 @@ class FileItem(scrapy.Item):
     uk = scrapy.Field()
 
 class UserItem(scrapy.Item):
+    url = scrapy.Field()
+    pwd = scrapy.Field()
     share_username = scrapy.Field()
     share_photo = scrapy.Field()
     ctime = scrapy.Field()

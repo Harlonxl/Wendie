@@ -158,6 +158,8 @@ class BaiduSpider(RedisSpider):
                     yield Request(url=url, cookies=self.cookies, dont_filter=True, callback=self.parse_dir, meta=meta)
 
             yield UserItem(
+                url=response.meta['shorturl'],
+                pwd=self.pwd,
                 share_username=data['linkusername'],
                 share_photo=data['photo'],
                 ctime=data['ctime']
@@ -211,6 +213,8 @@ class BaiduSpider(RedisSpider):
                     yield Request(url=url, dont_filter=True, callback=self.parse_dir, meta=meta)
 
             yield UserItem(
+                url=response.meta['shorturl'],
+                pwd=None,
                 share_username=response.meta['share_username'],
                 share_photo=response.meta['share_photo'],
                 ctime=response.meta['ctime']
